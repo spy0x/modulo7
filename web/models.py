@@ -47,3 +47,4 @@ class Inmueble(models.Model):
     ]
     tipo = models.CharField(max_length=1, choices=TIPO_CHOICES, default='C')
     precio_mensual = models.IntegerField(null=False, blank=False)
+    owner = models.ForeignKey(User, on_delete=models.CASCADE, null=False, blank=False)
