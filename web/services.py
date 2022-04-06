@@ -51,8 +51,20 @@ def listar_inmuebles_all():
     for index, propiedad in lista_propiedades:
         print(f"\n[{index+1}] {propiedad.name}\n{propiedad.descripcion}\nTipo: {propiedad.tipo}\nPrecio mensual: {propiedad.precio_mensual}\nArrendador: {propiedad.arrendador}")
 
-#Elimina la propiedad indicada por su nombre (campo UNIQUE en la DB), y pide que se le envíe por seguridad también que coincida con el rut del arrendador correcto
+#Elimina la propiedad indicada por su nombre y pide que se le envíe por seguridad también que coincida con el rut del arrendador correcto
 def eliminar_inmueble(nombre_inmueble: str, arrendador_rut: str):
     arrendador = User.objects.get(pk=arrendador_rut)
     inmueble = Inmueble.objects.get(arrendador=arrendador, nombre=nombre_inmueble)
     inmueble.delete()
+
+#Modifica la descripcion de la propiedad indicada por su nombre y pide que se le envíe por seguridad también que coincida con el rut del arrendador correcto
+def modificar_inmueble_descripcion(nombre_inmueble: str, arrendador_rut: str, nueva_descripcion: str):
+    arrendador = User.objects.get(pk=arrendador_rut)
+    inmueble = Inmueble.objects.get(arrendador=arrendador, nombre=nombre_inmueble)
+    inmueble.descripcion = nueva_descripcion
+
+#Modifica el precio de la propiedad indicada por su nombre y pide que se le envíe por seguridad también que coincida con el rut del arrendador correcto
+def modificar_inmueble_precio(nombre_inmueble: str, arrendador_rut: str, nuevo_precio: int):
+    arrendador = User.objects.get(pk=arrendador_rut)
+    inmueble = Inmueble.objects.get(arrendador=arrendador, nombre=nombre_inmueble)
+    inmueble.precio_mensual = nuevo_precio
