@@ -32,7 +32,7 @@ class User(models.Model):
 
 class Inmueble(models.Model):
     #se omite el id para que la ORM lo genere automaticamente    
-    nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
+    nombre = models.CharField(max_length=50, null=False, blank=False)
     descripcion = models.TextField(max_length=255, null=False, blank=False)
     m2_construidos = models.IntegerField(null=False, blank=False)
     m2_totales = models.IntegerField(null=False, blank=False)
@@ -47,7 +47,7 @@ class Inmueble(models.Model):
         ('Departamento', 'Departamento'),
         ('Parcela', 'Parcela'),
     ]
-    tipo = models.CharField(max_length=15, choices=TIPO_CHOICES, default='C')
+    tipo = models.CharField(max_length=15, choices=TIPO_CHOICES, default='Casa')
     precio_mensual = models.IntegerField(null=False, blank=False)
     arrendador = models.ForeignKey(User, on_delete=models.CASCADE, related_name='arrendador')
     arrendatario = models.ForeignKey(User, on_delete=models.SET_NULL, related_name='arrendatario', null=True, blank=True)
