@@ -32,7 +32,7 @@ class User(models.Model):
 
 class Inmueble(models.Model):
     #se omite el id para que la ORM lo genere automaticamente    
-    nombre = models.CharField(max_length=50, null=False, blank=False)
+    nombre = models.CharField(max_length=50, null=False, blank=False, unique=True)
     descripcion = models.TextField(max_length=255, null=False, blank=False)
     m2_construidos = models.IntegerField(null=False, blank=False)
     m2_totales = models.IntegerField(null=False, blank=False)
