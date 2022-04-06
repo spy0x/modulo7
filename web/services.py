@@ -14,7 +14,7 @@ def crear_inmueble(
     tipo: str,
     precio_mensual: int,
     arrendador_rut: str,
-    arrendatario_rut: str = None):
+    arrendatario_rut: str = None): #Este parametro es adicional por si se quiere agregar un arrendatario al momento de la creacion misma del inmueble.
 
     region = Region.objects.get(pk=region_id)
     comuna = Comuna.objects.get(name=comuna_name, region=region)
@@ -45,7 +45,7 @@ def listar_inmuebles(arrendador_id: str):
     for index, propiedad in lista_propiedades:
         print(f"\n[{index+1}] {propiedad.name}\n{propiedad.descripcion}\nTipo: {propiedad.tipo}\nPrecio mensual: {propiedad.precio_mensual}\nArrendatario: {propiedad.arrendatario}")
 
-#Lista todos los inmuebles de todos los arrendadores. Para los clientes puedan ver todos los inmuebles.
+#Lista todos los inmuebles de todos los arrendadores. Para que los clientes puedan ver todos los inmuebles.
 def listar_inmuebles_all():
     lista_propiedades = Inmueble.objects.all()
     for index, propiedad in lista_propiedades:
