@@ -1,0 +1,35 @@
+[
+    {
+        "model": "web.user",
+        "fields": {
+            "rut": "111-1",
+            "primer_nombre": "Frank",
+            "segundo_nombre": "Fred",
+            "primer_apellido": "Vadi",
+            "segundo_apellido": "Daz",
+            "direccion": "SSCC 1177",
+            "telefono": 22095004,
+            "email": "fevarga1@uc.cl",
+            "comuna_id": 316,
+            "region_id": 13,
+            "user_type_id": "Arrendador"
+        }
+    },
+    {
+        "model": "web.user",
+        "fields": {
+            "rut": "222-2",
+            "primer_nombre": "Rodrigo",
+            "segundo_nombre": "Felipe",
+            "primer_apellido": "Vargas",
+            "segundo_apellido": "Diaz",
+            "direccion": "Av. Brasil",
+            "telefono": 243401440,
+            "email": "spy0x@hotmail.com",
+            "comuna_id": 316,
+            "region_id": 13,
+            "user_type_id": "Arrendatario"
+        }
+    }
+]
+    
