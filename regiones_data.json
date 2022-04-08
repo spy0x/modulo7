@@ -1,0 +1,114 @@
+[
+    {
+        "model": "web.region",
+        "pk": 15,
+        "fields": {
+            "name": "Arica y Parinacota"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 1,
+        "fields": {
+            "name": "Tarapac\u00e1"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 2,
+        "fields": {
+            "name": "Antofagasta"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 3,
+        "fields": {
+            "name": "Atacama"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 4,
+        "fields": {
+            "name": "Coquimbo"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 5,
+        "fields": {
+            "name": "Valpara\u00edso"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 6,
+        "fields": {
+            "name": "Regi\u00f3n del Libertador Gral. Bernardo O\u2019Higgins"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 7,
+        "fields": {
+            "name": "Regi\u00f3n del Maule"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 16,
+        "fields": {
+            "name": "Regi\u00f3n de \u00d1uble"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 8,
+        "fields": {
+            "name": "Regi\u00f3n del Biob\u00edo"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 9,
+        "fields": {
+            "name": "Regi\u00f3n de la Araucan\u00eda"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 14,
+        "fields": {
+            "name": "Regi\u00f3n de Los R\u00edos"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 10,
+        "fields": {
+            "name": "Regi\u00f3n de Los Lagos"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 11,
+        "fields": {
+            "name": "Regi\u00f3n Ais\u00e9n del Gral. Carlos Ib\u00e1\u00f1ez del Campo"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 12,
+        "fields": {
+            "name": "Regi\u00f3n de Magallanes y de la Ant\u00e1rtica Chilena"
+        }
+    },
+    {
+        "model": "web.region",
+        "pk": 13,
+        "fields": {
+            "name": "Regi\u00f3n Metropolitana de Santiago"
+        }
+    }
+]

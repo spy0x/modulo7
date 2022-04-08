@@ -1,0 +1,16 @@
+[
+    {
+        "model": "web.UserType",
+        "pk": "Arrendador",
+        "fields": {
+            "type": "Arrendador"
+        }
+    },
+    {
+        "model": "web.UserType",
+        "pk": "Arrendatario",
+        "fields": {
+            "type": "Arrendatario"
+        }
+    }
+]
