@@ -14,7 +14,7 @@
             "comuna_id": 333,
             "region_id": 13,
             "tipo_id": "Casa",
-            "precio_mensual": 700000,
+            "precio_mensual": 650000,
             "arrendador": "111-1"
         }
     },
@@ -33,7 +33,7 @@
             "comuna_id": 316,
             "region_id": 13,
             "tipo_id": "Departamento",
-            "precio_mensual": 450000,
+            "precio_mensual": 680000,
             "arrendador": "111-1"
         }
     }
