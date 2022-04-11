@@ -11,7 +11,7 @@ class UserForm(UserCreationForm):
         fields = ('first_name', 'last_name', 'username', 'email', 'password1', 'password2')
 
 class TipoForm(forms.Form):
-    tipos = ((1, 'Arrendatario'), (2, 'Arrendador'),)
+    tipos = (('Arrendatario', 'Arrendatario'), ('Arrendador', 'Arrendador'),)
     tipo = forms.ChoiceField(choices=tipos)
     rut = forms.CharField(label='rut', max_length=10)
     direccion = forms.CharField(label='direccion', max_length=100)
