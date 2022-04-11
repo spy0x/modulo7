@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # Create your models here.
 class Region(models.Model):
@@ -15,7 +16,8 @@ class UserType(models.Model):
 class InmuebleType(models.Model):
     type = models.CharField(max_length=25, primary_key=True)
 
-class User(models.Model):
+class UserProfile(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
     rut = models.CharField(max_length=10, primary_key=True)
     primer_nombre = models.CharField(max_length=50, null=False, blank=False)
     segundo_nombre = models.CharField(max_length=50, default='')
