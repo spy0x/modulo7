@@ -15,4 +15,6 @@ class TipoForm(forms.Form):
     tipo = forms.ChoiceField(choices=tipos)
     rut = forms.CharField(label='rut', max_length=10)
     direccion = forms.CharField(label='direccion', max_length=100)
+    comuna = forms.CharField(label='comuna', max_length=50)
+    region = forms.CharField(label='region', max_length=50)
     telefono = forms.CharField(label='telefono', max_length=9)
