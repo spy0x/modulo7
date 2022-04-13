@@ -30,12 +30,16 @@ def Register_TipoView(request):
             tipo = form.cleaned_data['tipo']
             rut = form.cleaned_data['rut']
             direccion = form.cleaned_data['direccion']
+            comuna = form.cleaned_data['comuna']
+            region = form.cleaned_data['region']
             telefono = form.cleaned_data['telefono']
             user = User.objects.filter(username=username)[0]
             tipo_user = UserType.objects.get(type=tipo)
-            datos = UserProfile(user=user, user_type=tipo_user, rut=rut, direccion=direccion, telefono=telefono) #Faltan mas campos por rellenar los datos del formulario.
+            region_user = Region.objects.get(id=region)
+            comuna_user = Comuna.objects.filter(name=comuna)[0]
+            datos = UserProfile(user=user, user_type=tipo_user, rut=rut, direccion=direccion, telefono=telefono, region=region_user, comuna=comuna_user) #Faltan mas campos por rellenar los datos del formulario.
             datos.save()
-            return HttpResponseRedirect('/login/')
+            return HttpResponseRedirect('/')
     else:
         form = TipoForm()
     context = {
