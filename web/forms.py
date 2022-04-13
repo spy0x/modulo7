@@ -18,3 +18,8 @@ class TipoForm(forms.Form):
     comuna = forms.CharField(label='Comuna', max_length=50)
     region = forms.IntegerField(label='Región')
     telefono = forms.CharField(label='Teléfono', max_length=9)
+
+class UserUpdateForm(forms.ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']

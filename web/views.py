@@ -55,5 +55,19 @@ def DashboardView(request):
 def IndexView(request):
     return render(request, 'index.html')
 
+@login_required
+def profile(request):
+    if request.method == 'POST':
+        u_form = UserUpdateForm(request.POST, instance=request.user)
+        if u_form.is_valid():
+            u_form.save()
+            return HttpResponseRedirect('/dashboard/')
+    else:
+        u_form = UserUpdateForm(instance=request.user)
+    context = {
+        'u_form': u_form,
+    }
+    return render(request, 'registration/update_profile.html', context)
+
 
 # Create your views here.
