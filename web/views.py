@@ -49,7 +49,13 @@ def Register_TipoView(request):
 
 @login_required
 def DashboardView(request):
-    return render(request, 'dashboard.html')
+    user = request.user
+    arrendador = UserProfile.objects.get(user_id=user.id)
+    inmuebles_arrendador = Inmueble.objects.filter(arrendador=arrendador)
+    context = {
+        'inmuebles_arrendador': inmuebles_arrendador,
+    }
+    return render(request, 'dashboard.html', context)
 
 @login_required
 def IndexView(request):

@@ -11,4 +11,5 @@ urlpatterns = [
     path('dashboard/', views.DashboardView, name='dashboard'),
     path('update_profile/', views.profile, name='change_profile'),
     path('new_inmueble', views.New_Inmueble, name='new_inmueble'),
+    path('update_inmueble/', views.Inmueble_Update, name= 'update_inmueble_url'),
 ]

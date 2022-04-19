@@ -1,7 +1,7 @@
 from django import forms
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
-from .models import Comuna, Region
+from .models import Comuna, Region, Inmueble
 
 class UserForm(UserCreationForm):
     first_name = forms.CharField(max_length=25)
@@ -41,3 +41,8 @@ class InmuebleForm(forms.Form):
     n_banos = forms.IntegerField(label="N°Baños")
     n_estacionamientos = forms.IntegerField(label="N° Estacionamientos")
     precio_mensual = forms.IntegerField(label="Precio Mensual")
+
+class InmueblesUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Inmueble
+        fields = ['nombre', 'descripcion', 'precio_mensual']
