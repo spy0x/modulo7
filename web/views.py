@@ -69,5 +69,57 @@ def profile(request):
     }
     return render(request, 'registration/update_profile.html', context)
 
+@login_required
+def New_Inmueble(request):
+    if request.method == 'POST':
+        form = InmuebleForm(request.POST)
+        if form.is_valid():
+            tipo_id = form.cleaned_data['tipo_inmueble']
+            comuna_id = form.cleaned_data['comuna']
+            region_id = form.cleaned_data['region']
+            direccion = form.cleaned_data['direccion']
+            nombre = form.cleaned_data['nombre']
+            descripcion = form.cleaned_data['descripcion']
+            m2_construidos = form.cleaned_data['m2_construidos']
+            m2_totales = form.cleaned_data['m2_totales']
+            n_habitaciones = form.cleaned_data['n_habitaciones']
+            n_banos = form.cleaned_data['n_banos']
+            n_estacionamientos = form.cleaned_data['n_estacionamientos']
+            precio_mensual = form.cleaned_data['precio_mensual']
+
+            tipo = InmuebleType.objects.get(type=tipo_id)
+            comuna = Comuna.objects.get(id=comuna_id)
+            region = Region.objects.get(id=region_id)
+            user = request.user
+            arrendador = UserProfile.objects.get(user_id=user.id)
+
+            inmueble = Inmueble(
+                nombre=nombre, 
+                descripcion=descripcion, 
+                m2_construidos=m2_construidos, 
+                m2_totales=m2_totales,
+                n_estacionamientos=n_estacionamientos,
+                n_habitaciones=n_habitaciones,
+                n_banos=n_banos,
+                direccion=direccion,
+                precio_mensual=precio_mensual,
+                tipo=tipo,
+                region=region,
+                comuna=comuna,
+                arrendador=arrendador,
+                )
+            inmueble.save()
+            return HttpResponseRedirect('/dashboard/')
+    else:
+        form = InmuebleForm()
+        
+    context = {
+        'form': form,
+    }
+    return render(request, 'new_inmueble.html', context)
+
+
+
+
 
 # Create your views here.
