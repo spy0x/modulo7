@@ -27,13 +27,8 @@ class UserProfile(models.Model):
 
 class Inmueble(models.Model):
     #se omite el id para que la ORM lo genere automaticamente    
-<<<<<<< HEAD
-    nombre = models.CharField(max_length=50, null=False, blank=False)
-    descripcion = models.TextField(max_length=255, null=False, blank=False)
-=======
     nombre = models.CharField(max_length=255, null=False, blank=False, unique=True)
     descripcion = models.TextField(max_length=500, null=False, blank=False)
->>>>>>> Hito-4
     m2_construidos = models.IntegerField(null=False, blank=False)
     m2_totales = models.IntegerField(null=False, blank=False)
     n_estacionamientos = models.IntegerField(null=False, blank=False)
@@ -42,16 +37,7 @@ class Inmueble(models.Model):
     direccion = models.CharField(max_length=100, null=False, blank=False)
     region = models.ForeignKey(Region, on_delete=models.PROTECT)
     comuna = models.ForeignKey(Comuna, on_delete=models.PROTECT)
-<<<<<<< HEAD
-    TIPO_CHOICES = [
-        ('Casa', 'Casa'),
-        ('Departamento', 'Departamento'),
-        ('Parcela', 'Parcela'),
-    ]
-    tipo = models.CharField(max_length=15, choices=TIPO_CHOICES, default='Casa')
-=======
     tipo = models.ForeignKey(InmuebleType, on_delete=models.PROTECT)
->>>>>>> Hito-4
     precio_mensual = models.IntegerField(null=False, blank=False)
     arrendador = models.ForeignKey(UserProfile, on_delete=models.CASCADE, related_name='arrendador')
     arrendatario = models.ForeignKey(UserProfile, on_delete=models.SET_NULL, related_name='arrendatario', null=True, blank=True)
