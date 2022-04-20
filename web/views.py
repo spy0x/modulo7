@@ -124,8 +124,27 @@ def New_Inmueble(request):
     }
     return render(request, 'new_inmueble.html', context)
 
+@login_required
+def Inmueble_Update(request):
+    inmueble_id = request.GET['id']
+    inmueble = Inmueble.objects.get(id=inmueble_id)
+    if request.method == 'POST':
+        form = InmueblesUpdateForm(request.POST, instance=inmueble)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect('/dashboard/')
+    else:
+        form = InmueblesUpdateForm(instance=inmueble)
+    context = {
+        'form': form,
+    }
+    return render(request, 'update_inmueble.html', context)
 
-
+def Inmueble_Delete(request):
+    inmueble_id = request.GET['id']
+    inmueble = Inmueble.objects.get(id=inmueble_id)
+    inmueble.delete()
+    return HttpResponseRedirect('/dashboard/')
 
 
 # Create your views here.

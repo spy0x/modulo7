@@ -7,4 +7,14 @@
     <h5>Email {{ user.email }}</h5>
     <a href="{% url 'change_profile' %}">Editar Datos</a>
     <a href="{% url 'new_inmueble' %}">Agregar Inmueble</a>
+    <h3>Mis Propiedades</h3>
+    {% for inmueble in inmuebles_arrendador %}
+    <tr>
+        <td>
+            <h5>{{ inmueble.nombre }}</h5>
+            <a href="/update_inmueble?id={{ inmueble.id }}">Editar</a>
+            <a href="/delete_inmueble?id={{ inmueble.id }}">Borrar</a>
+        </td>
+    </tr>
+    {% endfor %}
 {% endblock %}
