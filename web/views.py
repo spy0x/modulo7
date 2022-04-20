@@ -57,9 +57,12 @@ def DashboardView(request):
     }
     return render(request, 'dashboard.html', context)
 
-@login_required
 def IndexView(request):
-    return render(request, 'index.html')
+    all_inmuebles = Inmueble.objects.all()
+    context = {
+        'all_inmuebles': all_inmuebles,
+    }
+    return render(request, 'index.html', context)
 
 @login_required
 def profile(request):
