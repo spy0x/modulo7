@@ -1,0 +1,27 @@
+[
+    {
+        "model": "web.userprofile",
+        "fields": {
+            "user": 1,
+            "rut": "111-1",
+            "direccion": "SSCC 1177",
+            "telefono": 22095004,
+            "comuna_id": 316,
+            "region_id": 13,
+            "user_type_id": "Arrendador"
+        }
+    },
+    {
+        "model": "web.userprofile",
+        "fields": {
+            "user": 2,
+            "rut": "222-2",
+            "direccion": "Av. Brasil",
+            "telefono": 243401440,
+            "comuna_id": 316,
+            "region_id": 13,
+            "user_type_id": "Arrendatario"
+        }
+    }
+]
+    

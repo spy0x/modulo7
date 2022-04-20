@@ -1,0 +1,33 @@
+[
+    {
+        "model": "web.inmuebletype",
+        "fields": {
+            "type": "Casa"
+        }
+    },
+    {
+        "model": "web.inmuebletype",
+        "fields": {
+            "type": "Departamento"
+        }
+    },
+    {
+        "model": "web.inmuebletype",
+        "fields": {
+            "type": "Parcela"
+        }
+    },
+    {
+        "model": "web.inmuebletype",
+        "fields": {
+            "type": "Estacionamiento"
+        }
+    },
+    {
+        "model": "web.inmuebletype",
+        "fields": {
+            "type": "Otro"
+        }
+    }
+]
+    

@@ -1,0 +1,12 @@
+{% extends 'index.html' %}
+
+{% block content %}
+<div class="container-fluid text-center p-3">
+    <h1>Crear nuevo usuario</h1>
+    <form method="POST" class="m-5">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button>Registrar</button>
+    </form>   
+</div>
+{% endblock %}
