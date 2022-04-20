@@ -2,11 +2,19 @@
 
 {% block content %}
 <div class="container-fluid text-center p-3">
-    <h1>Crear nuevo usuario</h1>
-    <form method="POST" class="m-5">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button>Registrar</button>
-    </form>
+    <div class="d-block justify-content-center">
+        <div class="card p-3">
+            <h1 class="title-header">Crear nuevo usuario</h1>
+            <div class="row justify-content-center">
+                <div class="col-12 col-lg-3">
+                    <form method="POST" class="mt-4 text_body">
+                        {% csrf_token %}
+                        {{ form.as_p }}
+                        <button class="btn-warning title-body">Registrar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}
