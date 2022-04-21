@@ -1,20 +1,30 @@
 {% extends 'index.html' %}
 
 {% block content %}
-    <h1>Welcome, {{ user.username }}</h1>
-    <h5>First name {{ user.first_name }}</h5>
-    <h5>Last name {{ user.last_name }}</h5>
-    <h5>Email {{ user.email }}</h5>
-    <a href="{% url 'change_profile' %}">Editar Datos</a>
-    <a href="{% url 'new_inmueble' %}">Agregar Inmueble</a>
-    <h3>Mis Propiedades</h3>
-    {% for inmueble in inmuebles_arrendador %}
-    <tr>
-        <td>
-            <h5>{{ inmueble.nombre }}</h5>
-            <a href="/update_inmueble?id={{ inmueble.id }}">Editar</a>
-            <a href="/delete_inmueble?id={{ inmueble.id }}">Borrar</a>
-        </td>
-    </tr>
+<div class="container-fluid text-center py-3">
+    <div class="d-block justify-content-center">
+        <div class="card p-3">
+            <div class="card bg-warning py-3">
+                <h1 class="title-header">Hola, {{ user.username }}</h1>
+                <h5>Nombre: {{ user.first_name }}</h5>
+                <h5>Apellido: {{ user.last_name }}</h5>
+                <h5>Email: {{ user.email }}</h5>
+                <div class="card-header">
+                    <a href="{% url 'change_profile' %}"><button class="btn-warning title-body mx-1">Editar Datos</button></a>
+                    <a href="{% url 'new_inmueble' %}"><button class="btn-warning title-body mx-1">Agregar Inmueble</button></a>
+                </div>
+            </div>
+            <h3>Mis Propiedades</h3>
+            {% for inmueble in inmuebles_arrendador %}
+            <tr>
+                <td>
+                    <h5>{{ inmueble.nombre }}</h5>
+                    <a href="/update_inmueble?id={{ inmueble.id }}">Editar</a>
+                    <a href="/delete_inmueble?id={{ inmueble.id }}">Borrar</a>
+                </td>
+            </tr>
+        </div>
+    </div>
+</div>
     {% endfor %}
 {% endblock %}
