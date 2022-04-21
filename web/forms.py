@@ -16,8 +16,10 @@ class TipoForm(forms.Form):
     tipo = forms.ChoiceField(choices=tipos, label='Tipo de Usuario')
     rut = forms.CharField(label='RUT', max_length=10)
     direccion = forms.CharField(label='Dirección', max_length=100)
-    comuna = forms.CharField(label='Comuna', max_length=50)
-    region = forms.IntegerField(label='Región')
+    comunas = [(comuna.id, comuna.name) for comuna in Comuna.objects.order_by('name')]
+    regiones = [(region.id, region.name) for region in Region.objects.order_by('id')]
+    comuna = forms.ChoiceField(choices=comunas)
+    region = forms.ChoiceField(choices=regiones)
     telefono = forms.CharField(label='Teléfono', max_length=9)
 
 class UserUpdateForm(forms.ModelForm):

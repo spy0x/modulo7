@@ -36,7 +36,7 @@ def Register_TipoView(request):
             user = User.objects.filter(username=username)[0]
             tipo_user = UserType.objects.get(type=tipo)
             region_user = Region.objects.get(id=region)
-            comuna_user = Comuna.objects.filter(name=comuna)[0]
+            comuna_user = Comuna.objects.get(id=comuna)
             datos = UserProfile(user=user, user_type=tipo_user, rut=rut, direccion=direccion, telefono=telefono, region=region_user, comuna=comuna_user) #Faltan mas campos por rellenar los datos del formulario.
             datos.save()
             return HttpResponseRedirect('/')
@@ -54,6 +54,7 @@ def DashboardView(request):
     inmuebles_arrendador = Inmueble.objects.filter(arrendador=arrendador)
     context = {
         'inmuebles_arrendador': inmuebles_arrendador,
+        'arrendador': arrendador,
     }
     return render(request, 'dashboard.html', context)
 

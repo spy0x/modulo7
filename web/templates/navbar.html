@@ -10,20 +10,20 @@
                     <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Inicio</a>
                 </li>
                 {% if not user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'login_url' %}">Login</a>
+                <li class="nav-item mx-auto ms-md-5">
+                    <a class="nav-link" href="{% url 'login_url' %}">Login</a>
                 </li>
                 {% else %}
                 <li class="nav-item">
                     <a class="nav-link active" href="{% url 'dashboard' %}">Dashboard</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'logout' %}">Logout</a>
+                <li class="nav-item mx-auto ms-md-5">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
                 </li>
                 {% endif %}
                 {% if not user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'register_url' %}">Register</a>
+                <li class="nav-item mx-auto ms-md-5">
+                    <a class="nav-link" href="{% url 'register_url' %}">Register</a>
                 </li>
                 {% endif %}
             </ul>
